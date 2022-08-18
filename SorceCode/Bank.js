@@ -7,7 +7,7 @@ document.getElementById('btn-submit').addEventListener('click',function(){
    console.log(possword);
    if(email === "Sontan@gmail.com" && possword === "myname")
       {
-         location.href = 'BankInside.html';
+         location.href = 'SorceCode/BankInside.html';
          console.log("Login Done");
       }
    else if(email !== "Sontan@gmail.com" && possword !== "myname")
