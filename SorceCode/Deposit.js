@@ -1,61 +1,51 @@
+function convertValue(InputId)
+   {
+      const InputField = document.getElementById(InputId);
+      const Input = InputField.value;
+      const convertInput = parseFloat(Input);
+      InputField.value = '';
+      return convertInput;
+   }
+
+function setValue(InputId, Value)
+   {
+      const Valuefield = document.getElementById(InputId);
+      Valuefield.innerText = Value;
+   }
+
+
 document.getElementById('user-Deposit').addEventListener('click',function(){
-   const depositfield = document.getElementById('user-Deposit-value');
-   const Deposit = depositfield.value;
-   const convertDeposit = parseFloat(Deposit);
-
-
-   const DepositAmountfield = document.getElementById('Deposit-Amounts');
-   const DepositAmount = DepositAmountfield.innerText;
-   const convertDepositAmount = parseFloat(DepositAmount);
-
-   
-
-
-   const Balancesfield = document.getElementById('Balances');
-   const Balances = Balancesfield.innerText;
-   const convertBalancs = parseFloat(Balances);
-
-
-   
+   const convertDeposit = convertValue('user-Deposit-value');
+   const convertDepositAmount = convertValue('Deposit-Amounts');
+   const convertBalancs = convertValue('Balances');
 
    if(convertDeposit > 0)
       {
          const TotalDeposit = convertDeposit + convertDepositAmount;
-         DepositAmountfield.innerText = TotalDeposit;
+         setValue('Deposit-Amounts',TotalDeposit);
 
          const TotalBalances = convertBalancs + convertDeposit;
-         Balancesfield.innerText = TotalBalances;
+         setValue('Balances', TotalBalances);
       }
    else
       {
          alert("Minimum Deposit is $1");
       }
-   depositfield.value = '';
-
 })
 
+
 document.getElementById('user-Withdrow').addEventListener('click',function(){
-   const Withdrowfield = document.getElementById('user-Withdrow-value');
-   const Withdrow = Withdrowfield.value;
-   const convertWithdrow = parseFloat(Withdrow);
-
-
-   const WithdrowAmountfield = document.getElementById('Withdrow-Amounts');
-   const WithdrowAmount = WithdrowAmountfield.innerText;
-   const convertWithdrowAmount = parseFloat(WithdrowAmount);
-
-
-   const Balancesfield = document.getElementById('Balances');
-   const Balances =  Balancesfield.innerText;
-   const convertBalancs = parseFloat(Balances);
+   const convertWithdrow = convertValue('user-Withdrow-value');
+   const convertWithdrowAmount = convertValue('Withdrow-Amounts');
+   const convertBalancs = convertValue('Balances');
    if(convertWithdrow <= convertBalancs && 0 < convertWithdrow)
       {
 
          const Withdrowtotal = convertWithdrowAmount + convertWithdrow;
-         WithdrowAmountfield.innerText = Withdrowtotal;
+         setValue('Withdrow-Amounts',Withdrowtotal);
 
          const TotalBalance = convertBalancs - convertWithdrow;
-         Balancesfield.innerText = TotalBalance; 
+         setValue('Balances',TotalBalance); 
       }
    else
       {
@@ -69,6 +59,5 @@ document.getElementById('user-Withdrow').addEventListener('click',function(){
             }
          
          
-      }  
-   Withdrowfield.value = ''
+      }
 })
