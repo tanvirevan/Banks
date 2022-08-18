@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AMS</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <header>
+      <section>
+         <h1 class="text-5xl text-center mt-6">Your <span class="font-medium text-green-600">AMS</span></h1>
+      </section>
+   </header>
+   <main>
+      <section>
+         <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto text-white">
+            <div class="bg-green-500 p-8 mt-10 rounded-md">
+               <h1 class="text-3xl">Deposit</h1>
+               <h1 class="text-5xl">$<span id="Deposit-Amounts" >00</span></h1>
+            </div>
+
+            <div class="bg-green-500 p-8 mt-10 rounded-md">
+               <h1 class="text-3xl">Withdrow</h1>
+               <h1 class="text-5xl">$<span id="Withdrow-Amounts">00</span></h1>
+            </div>
+
+            <div class="bg-green-500 p-8 mt-10 rounded-md">
+               <h1 class="text-3xl">Balance</h1>
+               <h1 class="text-5xl">$<span id="Balances">3000</span></h1>
+            </div>
+
+         </div>
+      </section>
+
+      <section>
+         <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto text-white mt-12">
+            <div class="bg-green-500 p-8 rounded-md">
+               <h1 class="text-5xl mb-6">Deposit</h1>
+               <input id="user-Deposit-value" class="text-black mb-6 px-3 py-2 w-3/4 rounded" type="number" name="" id="" placeholder="$ How much Amouts">
+               <button id="user-Deposit" class="px-6 block py-2 rounded-lg bg-amber-600 hover:bg-amber-700 font-medium items-center">Deposit</button>
+            </div>
+
+            <div class="bg-green-500 p-8 rounded-md">
+               <h1 class="text-5xl mb-6">Withdrow</h1>
+               <input id="user-Withdrow-value" class="text-black mb-6 px-3 py-2 w-3/4 rounded" type="number" oncanplaythrough="this.value=''" name="" id="" placeholder="$ How much Amouts">
+               <button id="user-Withdrow" class="px-6 block py-2 rounded-lg bg-amber-600 hover:bg-amber-700 font-medium items-center">Withdrow</button>
+            </div>
+
+         </div>
+      </section>
+   </main>
+   <script src="Deposit.js"></script>
+</body>
+</html>
